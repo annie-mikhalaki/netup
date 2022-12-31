@@ -128,16 +128,21 @@ const App: React.FC = () => {
             onSearchButtonClick={handleSearchButtonClick}
             onClearSearchInputClick={handleClearSearchInput}
           />
-          {searchStatus === fetchStatuses.pending && <Loading />}
-          {searchStatus === fetchStatuses.success && visibleDiscoverItems.length != 0 && (
-            <h2 className='movie-cards_title'>in the spotlight</h2>
-          )}
-          <div className='movie-cards'>
-            <div className='movie-cards_items' ref={cardsItemsRef}>
-              {searchStatus === fetchStatuses.success &&
-                visibleDiscoverItems.map((item, index) => <MovieCard key={`movie_${index}`} {...item} />)}
+          {searchStatus === fetchStatuses.pending && (
+            <div className='movie-cards_loading'>
+              <Loading />
             </div>
-          </div>
+          )}
+          {searchStatus === fetchStatuses.success && visibleDiscoverItems.length != 0 && (
+            <>
+              <h2 className='movie-cards_title'>in the spotlight</h2>
+              <div className='movie-cards'>
+                <div className='movie-cards_items' ref={cardsItemsRef}>
+                  {visibleDiscoverItems.map((item, index) => <MovieCard key={`movie_${index}`} {...item} />)}
+                </div>
+              </div>
+            </>
+          )}
         </div>
       )}
       {fetchStatus === fetchStatuses.pending && (
