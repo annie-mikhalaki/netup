@@ -140,11 +140,16 @@ const App: React.FC = () => {
           </div>
         </div>
       )}
-      {fetchStatus === fetchStatuses.pending && <Loading />}
-      {fetchStatus === fetchStatuses.rejected &&
+      {fetchStatus === fetchStatuses.pending && (
         <div className='center'>
-          <Button text='Try again' onClick={handleTryAgainClick} />
-        </div>}
+          <Loading />
+        </div>
+      )}
+      {fetchStatus === fetchStatuses.rejected && (
+        <div className='center'>
+          <Button onClick={handleTryAgainClick}>Try again</Button>
+        </div>
+      )}
     </>
   );
 };

@@ -1,14 +1,14 @@
 import classes from './Button.module.css';
 
 interface Button {
-  text: string;
+  children: string;
   onClick(): void;
 }
 
 const Button = (props: Button) => {
   return (
     <button className={classes.Button} onClick={props.onClick}>
-      {props.text}
+      {props.children}
     </button>
   );
 };

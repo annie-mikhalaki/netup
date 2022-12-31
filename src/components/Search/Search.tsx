@@ -28,7 +28,7 @@ const Search = (props: Search) => {
           {searchValue.length > 0 && <ClearInputIcon />}
         </button>
       </div>
-      <Button text='search' onClick={handleSearchButtonClick} />
+      <Button onClick={handleSearchButtonClick}>search</Button>
     </div>
   );
 };

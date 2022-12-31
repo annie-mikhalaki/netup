@@ -158,8 +158,9 @@ q:after {
 
 .center {
   display: flex;
-  align-self: center;
-  margin: 0 auto;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
 .movie-cards {
