@@ -1,11 +1,11 @@
 .MenuItem {
-    color: #fff;
-    font-size: 24px;
-    line-height: 30px;
-    padding: 13px 24px;
+  color: #fff;
+  font-size: 24px;
+  line-height: 30px;
+  padding: 13px 24px;
 }
 
 .MenuItem:hover {
-    background: rgba(255, 255, 255, 0.35);
-    cursor: pointer;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
 }

@@ -1,13 +1,13 @@
 .Button {
-    background-color: #09BB53;
-    color: #fff;
-    padding: 16px 32px;
-    font-size: 20px;
-    cursor: pointer;
-    border-radius: 0px 4px 4px 0px;
-    border: none;
+  background-color: #09bb53;
+  color: #fff;
+  padding: 16px 32px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 0px 4px 4px 0px;
+  border: none;
 }
 
 .Button:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }

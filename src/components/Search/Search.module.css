@@ -1,34 +1,55 @@
 .Search {
-    display: flex;
-    justify-content: center;
-    margin-top: 252px;
+  display: flex;
+  justify-content: center;
+  margin-top: 252px;
+  font-family: 'Source Sans Pro';
+  font-size: 20px;
 }
 
 @media screen and (max-width: 1600px) {
-    .Search {
-        margin-top: 50px;
-    }
+  .Search {
+    margin-top: 50px;
+  }
+}
+
+.Search div {
+  position: relative;
+  box-sizing: border-box;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px 0 0 4px;
+  border-width: 1px 0px 1px 1px;
+  border-style: solid;
+  border-color: #fff;
 }
 
 .Search input {
-    min-width: 976px;
-    padding-left: 24px;
-    font-size: 20px;
-    font-family: "Source Sans Pro";
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px 0 0 4px;
-    border-width: 1px 0px 1px 1px;
-    border-style: solid;
-    border-color: #fff;
-    outline: none;
+  padding-left: 24px;
+  min-width: 800px;
+  height: 52px;
+  font-size: 20px;
+  font-family: 'Source Sans Pro';
+  background: rgba(255, 255, 255, 0.1);
+  border: 0;
+  outline: none;
 }
 
 .Search input:focus {
-    background: #fff;
+  background: #fff;
 }
 
 @media screen and (max-width: 1024px) {
-    .Search input {
-        min-width: 480px;
-    }
+  .Search input {
+    min-width: 480px;
+  }
+}
+
+.clearInputButton {
+  position: absolute;
+  top: 18px;
+  right: 10px;
+  padding: 0;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
 }

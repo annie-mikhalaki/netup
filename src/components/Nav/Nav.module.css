@@ -1,22 +1,22 @@
 .Nav {
-    display: flex;
-    justify-content: space-around;
-    background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-around;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .Menu {
-    display: flex;
+  display: flex;
 }
 
 .SearchUserIcons {
-    display: flex;
+  display: flex;
 }
 
 .SearchUserIcons div {
-    margin-left: 32px;
-    cursor: pointer;
+  margin-left: 32px;
+  cursor: pointer;
 }
 
 .SearchUserIcons div:hover {
-    background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.1);
 }

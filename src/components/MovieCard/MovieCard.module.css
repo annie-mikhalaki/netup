@@ -1,58 +1,58 @@
 .moviecard {
-    padding: 0px 0px 0px 16px;
-    box-sizing: border-box;
-    line-height: 25px;
-    font-size: 20px;
-    color: #fff;
+  padding: 0px 0px 0px 16px;
+  box-sizing: border-box;
+  line-height: 25px;
+  font-size: 20px;
+  color: #fff;
 }
 
 .moviecard:first-child {
-    padding: 0;
+  padding: 0;
 }
 
 .moviecard__description {
-    padding-top: 16px;
+  padding-top: 16px;
 }
 
 .moviecard__img {
-    height: 208px;
-    width: 368px;
-    border-radius: 4px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  height: 208px;
+  width: 368px;
+  border-radius: 4px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .moviecard__title {
-    font-family: "Ubuntu";
-    line-height: 28px;
-    font-size: 24px;
+  font-family: 'Ubuntu';
+  line-height: 28px;
+  font-size: 24px;
 }
 
 .moviecard__parameters {
-    color: #a6a6a6;
+  color: #a6a6a6;
 }
 
 .moviecard__rate {
-    display: inline-block;
-    position: relative;
-    top: 8px;
-    margin-left: 16px;
-    background: rgba(9, 187, 83, 1);
-    padding: 4px 8px;
-    border-radius: 2px;
-    font-size: 16px;
-    line-height: 20px;
+  display: inline-block;
+  position: relative;
+  top: 8px;
+  margin-left: 16px;
+  background: rgba(9, 187, 83, 1);
+  padding: 4px 8px;
+  border-radius: 2px;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .moviecard__new {
-    display: inline-block;
-    position: relative;
-    top: 8px;
-    margin-left: 16px;
-    background: rgba(222, 139, 15, 1);
-    padding: 4px 8px;
-    border-radius: 2px;
-    font-size: 16px;
-    line-height: 20px;
+  display: inline-block;
+  position: relative;
+  top: 8px;
+  margin-left: 16px;
+  background: rgba(222, 139, 15, 1);
+  padding: 4px 8px;
+  border-radius: 2px;
+  font-size: 16px;
+  line-height: 20px;
 }
