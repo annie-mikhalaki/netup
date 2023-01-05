@@ -164,7 +164,6 @@ q:after {
 }
 
 .movie-cards {
-  padding: 0 16px;
   overflow: hidden;
 }
 
@@ -172,20 +171,41 @@ q:after {
   display: flex;
   position: relative;
   left: 0;
+  transition: all ease 1s;
 }
 
 .movie-cards_loading {
   display: flex;
   justify-content: center;
-  /* align-self: center; */
   padding-top: 60px;
 }
 
-.movie-cards_title {
+.spotlight {
   font-family: 'Ubuntu';
   font-weight: 700;
   font-size: 32px;
   text-align: center;
   color: #fff;
   margin: 56px 0;
+}
+
+.movie-cards_scroll {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.movie-cards_scroll button {
+  padding: 0px 15px;
+  font-size: 20px;
+  margin: 0 5px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.movie-cards_scroll button:hover {
+  background: rgba(255, 255, 255, 0.5);
 }

@@ -43,9 +43,13 @@ const App: React.FC = () => {
   const [discoverItems, setDiscoverItems] = useState<Film[]>([]);
   const [backgrounds, setBackgrounds] = useState<Background[]>([]);
   const [searchValue, setSearchValue] = useState<string>('');
+  const [cardsOffset, setCardsOffset] = useState<number>(0);
   const [currentBackgroundImageIndex, setCurrentBackgroundImageIndex] = useState(-1);
-
-  const cardsItemsRef = useRef() as React.MutableRefObject<HTMLInputElement>;
+  const cardItemsRef = useRef<any>(null);
+  const [cardItemWidth, setCardItemWidth] = useState<number>(300);
+  const [cardItemPosition, setCardItemPosition] = useState<number>(0);
+  const [prevButtonDisabled, setPrevButtonDisabled] = useState<boolean>(true);
+  const [nextButtonDisabled, setNextButtonDisabled] = useState<boolean>(true);
 
   const visibleDiscoverItems = searchValue
     ? discoverItems.filter((item: Film) => item.title.toLowerCase().includes(searchValue.toLowerCase()))
@@ -83,6 +87,27 @@ const App: React.FC = () => {
     }, 5000);
   }, [currentBackgroundImageIndex]);
 
+  useEffect(() => {
+    const scrollWidth = cardItemsRef.current?.scrollWidth;
+    if (scrollWidth && discoverItems.length) {
+      const cardItemWidth = scrollWidth / discoverItems.length;
+      setCardItemWidth(cardItemWidth);
+      setNextButtonDisabled(false);
+    }
+  }, [discoverItems]);
+
+  useEffect(() => {
+    if (cardItemPosition === 0) {
+      setPrevButtonDisabled(true)
+    } else if (cardItemPosition === visibleDiscoverItems.length - 1) {
+      setNextButtonDisabled(true)
+    } else {
+      setPrevButtonDisabled(false)
+      setNextButtonDisabled(false)
+    }
+    setCardsOffset(cardItemPosition * cardItemWidth);
+  }, [cardItemPosition])
+
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setSearchStatus(fetchStatuses.pending);
     setSearchValue(e.target.value);
@@ -113,6 +138,14 @@ const App: React.FC = () => {
     fetchDiscover();
   };
 
+  const handlePrevButtonClick = () => {
+    setCardItemPosition(cardItemPosition - 1);
+  };
+
+  const handleNextButtonClick = () => {
+    setCardItemPosition(cardItemPosition + 1);
+  };
+
   return (
     <>
       {fetchStatus === fetchStatuses.success && (
@@ -135,10 +168,16 @@ const App: React.FC = () => {
           )}
           {searchStatus === fetchStatuses.success && visibleDiscoverItems.length != 0 && (
             <>
-              <h2 className='movie-cards_title'>in the spotlight</h2>
+              <h2 className='spotlight'>in the spotlight</h2>
               <div className='movie-cards'>
-                <div className='movie-cards_items' ref={cardsItemsRef}>
-                  {visibleDiscoverItems.map((item, index) => <MovieCard key={`movie_${index}`} {...item} />)}
+                <div className='movie-cards_items' ref={cardItemsRef} style={{ left: `-${cardsOffset}px` }}>
+                  {visibleDiscoverItems.map((movieItem, index) => (
+                    <MovieCard key={`movie_${index}`} {...movieItem} />
+                  ))}
+                </div>
+                <div className='movie-cards_scroll'>
+                  <button onClick={handlePrevButtonClick} disabled={prevButtonDisabled}>{`<`}</button>
+                  <button onClick={handleNextButtonClick} disabled={nextButtonDisabled}>{`>`}</button>
                 </div>
               </div>
             </>
