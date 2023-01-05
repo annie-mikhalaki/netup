@@ -98,15 +98,15 @@ const App: React.FC = () => {
 
   useEffect(() => {
     if (cardItemPosition === 0) {
-      setPrevButtonDisabled(true)
+      setPrevButtonDisabled(true);
     } else if (cardItemPosition === visibleDiscoverItems.length - 1) {
-      setNextButtonDisabled(true)
+      setNextButtonDisabled(true);
     } else {
-      setPrevButtonDisabled(false)
-      setNextButtonDisabled(false)
+      setPrevButtonDisabled(false);
+      setNextButtonDisabled(false);
     }
     setCardsOffset(cardItemPosition * cardItemWidth);
-  }, [cardItemPosition])
+  }, [cardItemPosition]);
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setSearchStatus(fetchStatuses.pending);
